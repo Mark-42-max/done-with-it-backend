@@ -30,4 +30,4 @@ app.get('/', requireAuth, (req, res) => {
     res.json({ message: 'You are logged in as ' + req.user.email });
 });
 
-app.listen(8080, () => { console.log("Server running") });
+app.listen(process.env.PORT, () => { console.log("Server running") });
