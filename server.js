@@ -27,7 +27,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(authRoutes);
 
 app.get('/', requireAuth, (req, res) => {
-    res.json({ message: 'You are logged in as ' + req.user.email });
+    res.json({ email: req.user.email });
 });
 
 app.listen(process.env.PORT, () => { console.log("Server running") });
